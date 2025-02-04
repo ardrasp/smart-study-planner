@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Study Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>📚 Smart Study Planner</h2>
+        
+        <button id="darkModeToggle">🌙 Toggle Dark Mode</button>
+
+        <form id="taskForm">
+            <input type="text" id="subject" placeholder="Subject" required>
+            <input type="text" id="topic" placeholder="Topic" required>
+            <input type="date" id="dueDate" required>
+            <select id="priority">
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+            <button type="submit">Add Task</button>
+        </form>
+
+        <input type="text" id="searchTask" placeholder="🔍 Search tasks...">
+
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+
+        <div class="task-list" id="taskList"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
