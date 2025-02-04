@@ -5,6 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Study Planner</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: linear-gradient(to right, #c683ea, #9b40cc(276 26% 13%));
+            font-family: Rustico, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: rgba(198, 97, 228, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            width: 40%;
+            text-align: center;
+        }
+        button {
+            background: #9845ea;
+            color: rgb(228, 178, 232);
+            border: none;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #61066b;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -13,14 +45,25 @@
         <button id="darkModeToggle">🌙 Toggle Dark Mode</button>
 
         <form id="taskForm">
-            <input type="text" id="subject" placeholder="Subject" required>
-            <input type="text" id="topic" placeholder="Topic" required>
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" placeholder="Enter subject" required>
+
+            <label for="topic">Topic:</label>
+            <input type="text" id="topic" placeholder="Enter topic" required>
+
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate" required>
+
+            <label for="dueDate">Due Date:</label>
             <input type="date" id="dueDate" required>
+
+            <label for="priority">Priority:</label>
             <select id="priority">
                 <option value="High">High</option>
                 <option value="Medium">Medium</option>
                 <option value="Low">Low</option>
             </select>
+
             <button type="submit">Add Task</button>
         </form>
 
@@ -31,6 +74,12 @@
         </div>
 
         <div class="task-list" id="taskList"></div>
+        
+        <button id="startTimer">⏳ Start Pomodoro (25 min)</button>
+        <button id="stopTimer">⏹ Stop Pomodoro</button>
+        <button id="resetTimer">🔄 Reset Pomodoro</button>
+
+        <div id="timerDisplay">25:00</div>
     </div>
 
     <script src="script.js"></script>
